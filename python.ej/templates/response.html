@@ -1,6 +1,6 @@
 <html>
     <head>
-        
+        <meta http-equiv="refresh" content="{{ frec }}" />
         <title>TP2</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- JQuery -->
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Formulario <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#"> Valores atmosféricos <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://info.unlp.edu.ar/">Fac. Informática</a>
@@ -56,21 +56,22 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h3 class="display-4">Taller de Proyecto II</h3>
-                <p class="lead">Simulacion</p>
+                <p class="lead">Simulacion de medicion</p>
             </div>
         </div>
 
         <div class="container">
         	
         	<div class="page-header">
-			    <h1>Simulacion</h1>
+			    <h1>Valores</h1>
 			</div>        	
 
 			<ul class="list-group">
-			    <li class="list-group-item"><b>Temperatura:</b> {{ tempa }} </li>
-			    <li class="list-group-item"><b>Presion:</b> {{ presa }} </li>
-			    <li class="list-group-item"><b>Humedad:</b>  {{ humea }} </li>
-			    <li class="list-group-item"><b>Viento:</b>  {{ winda }} </li>
+			    <li class="list-group-item"><b>Frecuencia:</b> {{ frec }} </li>
+			    <li class="list-group-item"><b>Temperatura actual:</b> {{ tempa }} </li>
+			    <li class="list-group-item"><b>Presion actual:</b> {{ presa }} </li>
+			    <li class="list-group-item"><b>Humedad actual:</b>  {{ humea }} </li>
+			    <li class="list-group-item"><b>Viento actual:</b>  {{ winda }} </li>
 			    <li class="list-group-item"><b>Temperatura media:</b> {{ tempm }} </li>
 			    <li class="list-group-item"><b>Presion media:</b> {{ presm }} </li>
 			    <li class="list-group-item"><b>Humedad media:</b>  {{ humem }} </li>

@@ -3,6 +3,12 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import linecache
+from selenium import webdriver
+import time
+import urllib
+import urllib2
+
+
 
 app = Flask(__name__)
 
@@ -18,6 +24,7 @@ def file_len(fname):
 # Define la ruta con la que se ingresara desde el browser
 @app.route('/')
 def index():
+    frec=5
     currentLine = file_len('test.txt')
     tempm = 0
     presm = 0
@@ -40,23 +47,10 @@ def index():
     presm /= 10
     humem /= 10
     windm /= 10
-    return render_template('response.html', tempa=tempa, presa=presa, humea=humea, winda=winda, tempm=tempm, presm=presm, humem=humem, windm=windm)
+    linecache.clearcache()
 
-# Define la ruta y metodo con el que se debe llegar a este endpoint
-@app.route('/form', methods = ['POST'])
-def action_form():
+    return render_template('response.html', frec=frec, tempa=tempa, presa=presa, humea=humea, winda=winda, tempm=tempm, presm=presm, humem=humem, windm=windm)
 
-    if request.method == 'POST':
-        data = request.form
-        nombre = data["nombre"]
-        apellido = data["apellido"]
-        email = data["email"]
-
-        if data["sexo"] == "masc":
-            sexo = "Masculino"
-        else:
-            sexo = "Femenino"
-        return render_template('response.html', nombre=nombre, apellido=apellido, email=email, sexo=sexo)
 
 if __name__ == "__main__":
     # Define HOST y PUERTO para accerder
