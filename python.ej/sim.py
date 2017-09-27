@@ -16,4 +16,10 @@ while (True):
     #print (mystr)
     fo.write(mystr)
     fo.close()
+
+    fo = open('freqs.txt','r')
+    valor = fo.read()
+    frec = int(valor)
+    fo.close()
+
     sleep(frec)

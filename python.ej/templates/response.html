@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta http-equiv="refresh" content="{{ frec }}" />
+        <meta http-equiv="refresh" content="{{ freq }}" />
         <title>TP2</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- JQuery -->
@@ -60,6 +60,77 @@
             </div>
         </div>
 
+
+        <h3 class="text-left">Cantidad de Muestras en un Segundo:</h3>
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <form action="/form_sense/1" method="POST">
+                <div class="form-group">
+                  {% if freq == 1 %}
+                  <button type="submit" class="btn btn-success btn-block" disabled="disabled">1</button>
+                  {% else %}
+                  <button type="submit" class="btn btn-success btn-block">1</button>
+                  {% endif %}
+                </div>
+              </form>
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <form action="/form_sense/3" method="POST">
+                <div class="form-group">
+                  {% if freq == 3 %}
+                  <button type="submit" class="btn btn-success btn-block" disabled="disabled">3</button>
+                  {% else %}
+                  <button type="submit" class="btn btn-success btn-block">3</button>
+                  {% endif %}
+                </div>
+              </form>
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <form action="/form_sense/5" method="POST">
+                <div class="form-group">
+                  {% if freq == 5 %}
+                  <button type="submit" class="btn btn-success btn-block" disabled="disabled">5</button>
+                  {% else %}
+                  <button type="submit" class="btn btn-success btn-block">5</button>
+                  {% endif %}
+                </div>
+              </form>
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <form action="/form_sense/10" method="POST">
+                <div class="form-group">
+                  {% if freq == 10 %}
+                  <button type="submit" class="btn btn-success btn-block" disabled="disabled">10</button>
+                  {% else %}
+                  <button type="submit" class="btn btn-success btn-block">10</button>
+                  {% endif %}
+                </div>
+              </form>
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <form action="/form_sense/30" method="POST">
+                <div class="form-group">
+                  {% if freq == 30 %}
+                  <button type="submit" class="btn btn-success btn-block" disabled="disabled">30</button>
+                  {% else %}
+                  <button type="submit" class="btn btn-success btn-block">30</button>
+                  {% endif %}
+                </div>
+              </form>
+            </div>
+              <div class="col-md-2 col-sm-2">
+              <form action="/form_sense/60" method="POST">
+                <div class="form-group">
+                  {% if freq == 60 %}
+                  <button type="submit" class="btn btn-success btn-block" disabled="disabled">60</button>
+                  {% else %}
+                  <button type="submit" class="btn btn-success btn-block">60</button>
+                  {% endif %}
+                </div>
+              </form>
+            </div>
+          </div>
+
         <div class="container">
         	
         	<div class="page-header">
@@ -67,7 +138,7 @@
 			</div>        	
 
 			<ul class="list-group">
-			    <li class="list-group-item"><b>Frecuencia:</b> {{ frec }} </li>
+			    <li class="list-group-item"><b>Frecuencia:</b> {{ freq }} </li>
 			    <li class="list-group-item"><b>Temperatura actual:</b> {{ tempa }} </li>
 			    <li class="list-group-item"><b>Presion actual:</b> {{ presa }} </li>
 			    <li class="list-group-item"><b>Humedad actual:</b>  {{ humea }} </li>

@@ -21,10 +21,22 @@ def file_len(fname):
 #fo = open('test.txt','w')
 
 
+@app.route('/form_sense/<int:freq>', methods=['GET', 'POST'])
+def action_form_sense(freq):
+    if request.method == 'GET':
+        data = request.form
+        freq = data["freq"]
+        fo = open('freqs.txt', 'w')
+        fo.write(str(freq))
+        fo.close()
+    return render_template('response.html', freq=freq)
+
+
 # Define la ruta con la que se ingresara desde el browser
 @app.route('/')
 def index():
-    frec=5
+    freq = 5
+
     currentLine = file_len('test.txt')
     tempm = 0
     presm = 0
@@ -49,7 +61,7 @@ def index():
     windm /= 10
     linecache.clearcache()
 
-    return render_template('response.html', frec=frec, tempa=tempa, presa=presa, humea=humea, winda=winda, tempm=tempm, presm=presm, humem=humem, windm=windm)
+    return render_template('response.html', freq=freq, tempa=tempa, presa=presa, humea=humea, winda=winda, tempm=tempm, presm=presm, humem=humem, windm=windm)
 
 
 if __name__ == "__main__":
